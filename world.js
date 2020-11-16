@@ -1,13 +1,14 @@
 window.onload=function(){
     var lookup= document.getElementById("lookup");
-
+    //var lookupcities= document.getElementById("lookupcities");
+    
     lookup.addEventListener("click",(e)=>{
         e.preventDefault();
-		var input = document.getElementById("country").value;
-        //var url= "http://localhost:8080/world.php " + "?country=" + input;
-        var url= "http://localhost/info2180-lab5/world.php" + "?country=" + input;
+        var input = document.getElementById("country").value;
         var httpRequest= new XMLHttpRequest();
-        httpRequest.onreadystatechange= display();
+        var url= "world.php?country=" + input;
+        
+        httpRequest.onreadystatechange= display;
         httpRequest.open("GET",url);
         httpRequest.send();
 
@@ -23,5 +24,28 @@ window.onload=function(){
             }
         }
     });
+/*
+    lookupcities.addEventListener("click",(e)=>{
+        e.preventDefault();
+        var url= "http://localhost/info2180-lab5/world.php" + "?country=" + input +"&context=cities";
+        var httpRequest= new XMLHttpRequest();
+        httpRequest.onreadystatechange= citylookup();
+        httpRequest.open("GET",url);
+        httpRequest.send();
+
+        function citylookup(){
+            if(httpRequest.readyState===XMLHttpRequest.DONE){
+                if(httpRequest.status===200){
+                    var response= httpRequest.responseText;
+                    var result=document.getElementById("result");
+                    result.innerHTML=response;
+                }else{
+                    alert("There was a problem with this request");
+                }
+            }
+        }
+
+
+    });*/
 
 }

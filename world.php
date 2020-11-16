@@ -24,17 +24,13 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <tbody>
   <?php foreach ($results as $row):?>
       <tr>
-          <td><?= $row['name']; ?></td>
-          <td><?= $row['continent']; ?></td>
-          <hd><?= $row['independence_year']; ?></td>
-          <td><?=  $row['head_of_state'];?></td>
+          <td><?php echo $row['name']; ?></td>
+          <td><?php echo $row['continent']; ?></td>
+          <td><?php echo $row['independence_year']; ?></td>
+          <td><?php echo $row['head_of_state'];?></td>
       <tr>
   <?php endforeach;?>
   </tbody>
 </table>
 
-<--!ul>
-<?php /*foreach ($results as $row): ?>
-  <li><?= $row['name'] . ' is ruled by ' . $row['head_of_state']; ?></li>
-<?php endforeach; */?>
-</ul-->
+
