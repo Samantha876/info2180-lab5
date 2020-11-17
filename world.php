@@ -46,7 +46,6 @@ $context= $param['context'];
         <?php $page= null;?>
         <?php $url= null;?>
         <?php $context= null;?>
-        
         <table>
             <thead>
                 <tr>

@@ -6,7 +6,7 @@ window.onload=function(){
         e.preventDefault();
         var input = document.getElementById("country").value;
         var httpRequest= new XMLHttpRequest();
-        var url= "world.php?country=" + input;
+        var url= "world.php?country=" + input + "&context=countries";
         
         httpRequest.onreadystatechange= display;
         httpRequest.open("GET",url);
