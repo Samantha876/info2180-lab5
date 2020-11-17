@@ -1,6 +1,6 @@
 window.onload=function(){
     var lookup= document.getElementById("lookup");
-    //var lookupcities= document.getElementById("lookupcities");
+    var lookupcities= document.getElementById("lookupcities");
     
     lookup.addEventListener("click",(e)=>{
         e.preventDefault();
@@ -24,16 +24,17 @@ window.onload=function(){
             }
         }
     });
-/*
+
     lookupcities.addEventListener("click",(e)=>{
         e.preventDefault();
-        var url= "http://localhost/info2180-lab5/world.php" + "?country=" + input +"&context=cities";
+        var input = document.getElementById("country").value;
         var httpRequest= new XMLHttpRequest();
-        httpRequest.onreadystatechange= citylookup();
+        var url= "world.php?country=" + input + "&context=cities";
+        httpRequest.onreadystatechange= getcity;
         httpRequest.open("GET",url);
         httpRequest.send();
 
-        function citylookup(){
+        function getcity(){
             if(httpRequest.readyState===XMLHttpRequest.DONE){
                 if(httpRequest.status===200){
                     var response= httpRequest.responseText;
@@ -44,8 +45,5 @@ window.onload=function(){
                 }
             }
         }
-
-
-    });*/
-
+    });
 }
